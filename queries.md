@@ -8,7 +8,17 @@ JOIN
 School_database.dbo.Programme p ON s.Prog_number = p.Prog_number
 ```
 
-b) Write a statement that gives a list of student names, with their registration statues, and their courses they are enrolled on.
+b) Write a statement that gives a list of student names, with their registration status, and the courses they are enrolled in.
+**Code:**
+```sql
+SELECT s.first_name, s.last_name, r.Reg_status, c.Course_title 
+FROM 
+School_database.dbo.student_school s 
+JOIN 
+School_database.dbo.registration_school r ON s.Student_number = r.Student_number
+JOIN
+School_database.dbo.course_school c ON r.Course_number = r.Course_number
+```
 
 c) Create a new table, `registration_term` for Winter 2012 semester course section using a subquery. Include `crs_no`, `school_no` and `room_id` columns only.
 
