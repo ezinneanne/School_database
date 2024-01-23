@@ -1,4 +1,12 @@
 a) Display a student's full name along with his/her programme's description.
+**Code:**
+```sql
+SELECT s.first_name, s.last_name, p.prog_description 
+FROM 
+School_database.dbo.student_school s 
+JOIN 
+School_database.dbo.Programme p ON s.Prog_number = p.Prog_number
+```
 
 b) Write a statement that gives a list of student names, with their registration statues, and their courses they are enrolled on.
 
