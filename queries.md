@@ -22,6 +22,17 @@ School_database.dbo.course_school c ON r.Course_number = r.Course_number
 
 c) Create a new table, `registration_term` for Winter 2012 semester course section using a subquery. Include `crs_no`, `school_no` and `room_id` columns only.
 
+```sql
+SELECT r.Course_number, s.School_number, l.Room_id
+INTO registration_term
+FROM School_database.dbo.registration_school r
+JOIN School_database.dbo.student_school st ON r.Student_number = st.Student_number
+JOIN School_database.dbo.school_school s ON st.School_number = s.School_number
+JOIN School_database.dbo.course_school c ON r.Course_number = c.Course_number
+JOIN School_database.dbo.location_school l ON s.Room_Id = l.Room_Id
+WHERE r.Term = 'Winter 2012';
+```
+
 d) Delete rows from `registration_term` table for school of ENGINEERING. Note that the name engineering is in upper case.
 
 e) Create a view that will display student name, programme number, and fee of each student in school number 10. Prevent change of school through the view.
