@@ -64,7 +64,11 @@ GO
 f) Display all programme names(programme name and description separated by a comma and a space) with proper case, and fee with currency format.
 
 ```sql
+USE [School_database];
+GO
 
+Select UPPER(LEFT(Prog_name, 1)) + LOWER(SUBSTRING(Prog_name,2,LEN(Prog_name))) + ', ' + 
+    UPPER(LEFT(Prog_description, 1)) + LOWER(SUBSTRING(Prog_description, 2, LEN(Prog_description))) from dbo.Programme;
 ```
 
 g) Display all student names and birth dates. Display birth dates with the format '20 OCTOBER 1980'.
