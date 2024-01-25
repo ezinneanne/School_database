@@ -35,7 +35,13 @@ WHERE r.Term = 'Winter 2012';
 
 d) Delete rows from `registration_term` table for school of ENGINEERING. Note that the name engineering is in upper case.
 
+```sql
+DELETE FROM registration_term WHERE School_number = 2;
+```
+
 e) Create a view that will display student name, programme number, and fee of each student in school number 10. Prevent change of school through the view.
+
+
 
 f) Display all programme names(programme name and description separated by a comma and a space) with proper case, and fee with currency format.
 
