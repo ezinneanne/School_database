@@ -42,7 +42,23 @@ DELETE FROM registration_term WHERE School_number = 2;
 e) Create a view that will display student name, programme number, and fee of each student in school number 10. Prevent change of school through the view.
 
 ```sql
+USE [School_database];
+GO
 
+CREATE VIEW dbo.StudentInfo AS (
+
+SELECT
+    s.Student_number,
+    s.Last_name + ', ' + s.First_name AS Student_name,
+    s.Prog_number
+  FROM
+    dbo.student_school s 
+  JOIN
+    dbo.school_school sch  ON s.School_number = sch.School_number
+  WHERE
+    sch.School_number = 10
+);
+GO
 ```
 
 f) Display all programme names(programme name and description separated by a comma and a space) with proper case, and fee with currency format.
