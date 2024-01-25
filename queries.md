@@ -1,5 +1,5 @@
 a) Display a student's full name along with his/her programme's description.
-**Code:**
+
 ```sql
 SELECT s.first_name, s.last_name, p.prog_description 
 FROM 
@@ -9,7 +9,7 @@ School_database.dbo.Programme p ON s.Prog_number = p.Prog_number
 ```
 
 b) Write a statement that gives a list of student names, with their registration status, and the courses they are enrolled in.
-**Code:**
+
 ```sql
 SELECT s.first_name, s.last_name, r.Reg_status, c.Course_title 
 FROM 
@@ -84,6 +84,26 @@ FROM dbo.student_school s;
 
 h) Write a DDL and DML trigger for any of the table in the above model.
 
-```sql
 
+**DDL Trigger**
+```sql
+USE [School_database];
+GO
+
+CREATE TABLE dbo.example_student(
+ Student_ID INT NOT NULL PRIMARY KEY,
+ Student_name [NVARCHAR](50) NOT NULL,
+ Student_address [NVARCHAR](50) NOT NULL,
+);
+```
+
+
+**DML Triggger**
+```sql
+USE [School_database];
+GO
+
+SELECT
+  Student_date_of_birth
+FROM dbo.student_school;
 ```
