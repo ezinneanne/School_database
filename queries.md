@@ -74,7 +74,12 @@ Select UPPER(LEFT(Prog_name, 1)) + LOWER(SUBSTRING(Prog_name,2,LEN(Prog_name))) 
 g) Display all student names and birth dates. Display birth dates with the format '20 OCTOBER 1980'.
 
 ```sql
+USE [School_database];
+GO
 
+SELECT
+  s.Last_name + ', ' + s.First_name AS Student_name, Student_date_of_birth
+FROM dbo.student_school s;
 ```
 
 h) Write a DDL and DML trigger for any of the table in the above model.
